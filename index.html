@@ -40,38 +40,76 @@
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 0px;
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            color: white;
+        .logo-img {
+            height: 100px;  
+            width: 150px;    
+            object-fit: contain;
         }
 
         .logo-text h1 {
-            font-size: 1.4em;
+            font-size: 16px;
+            margin: 0;
             font-weight: 600;
             color: #1a202c;
             letter-spacing: -0.5px;
         }
 
         .logo-text p {
-            font-size: 0.85em;
+            font-size: 11px;
+            margin: 0;
+            opacity: 0.7;
             color: #718096;
             margin-top: 2px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .nav-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+            color: #64748b;
+            border: 1px solid #e2e8f0;
+        }
+
+        .nav-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+
+        .nav-btn:hover {
+            background: #f8fafc;
+            border-color: #cbd5e1;
+        }
+
+        .nav-btn.active:hover {
+            background: #2563eb;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 40px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
         }
 
         .stats {
@@ -238,6 +276,17 @@
             box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
         }
 
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+            padding: 8px 16px;
+            font-size: 0.9em;
+        }
+
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+
         .table-container {
             padding: 0;
             overflow-x: auto;
@@ -255,7 +304,7 @@
         }
 
         th {
-            padding: 16px 24px;
+            padding: 16px 20px;
             text-align: left;
             font-weight: 600;
             font-size: 0.85em;
@@ -265,7 +314,7 @@
         }
 
         td {
-            padding: 18px 24px;
+            padding: 18px 20px;
             border-bottom: 1px solid #f1f5f9;
             font-size: 0.95em;
             color: #2d3748;
@@ -308,6 +357,11 @@
             color: #475569;
         }
 
+        .grade-info {
+            color: #64748b;
+            font-size: 0.9em;
+        }
+
         .loading {
             text-align: center;
             padding: 80px 20px;
@@ -340,6 +394,108 @@
             opacity: 0.5;
         }
 
+        /* Registration Page Styles */
+        .reg-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #374151;
+            font-weight: 500;
+            font-size: 0.95em;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .alert {
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .alert-success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+
+        .alert-info {
+            background: #dbeafe;
+            color: #1e40af;
+            border: 1px solid #bfdbfe;
+        }
+
+        .student-list {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .student-item {
+            padding: 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .student-item:hover {
+            border-color: #3b82f6;
+            background: #f8fafc;
+        }
+
+        .student-info h3 {
+            font-size: 1.1em;
+            color: #1a202c;
+            margin-bottom: 4px;
+        }
+
+        .student-info p {
+            font-size: 0.9em;
+            color: #64748b;
+            margin: 2px 0;
+        }
+
+        @media (max-width: 968px) {
+            .reg-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .nav-btn {
+                width: 100%;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-bar {
                 padding: 0 20px;
@@ -350,7 +506,7 @@
             }
 
             .logo-text h1 {
-                font-size: 1.2em;
+                font-size: 14px;
             }
 
             .logo-text p {
@@ -378,126 +534,209 @@
             }
             
             th, td {
-                padding: 12px 16px;
+                padding: 12px 10px;
             }
 
             .card-title {
                 font-size: 1.1em;
             }
-        }
-                .logo-section {
-            display: flex;
-            align-items: center;
-            gap: 0px;
-        }
 
-        .logo-img {
-            height: 100px;   /* SMALL logo */
-            width: 150px;    /* keeps it compact */
-            object-fit: contain;
+            .nav-content {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
         }
-
-        .logo-text h1 {
-            font-size: 16px;
-            margin: 0;
-        }
-
-        .logo-text p {
-            font-size: 11px;
-            margin: 0;
-            opacity: 0.7;
-        }
-    
     </style>
 </head>
 <body>
-        <nav class="nav-bar">
+    <nav class="nav-bar">
         <div class="nav-content">
             <div class="logo-section">
                 <img src="logo.png" alt="BEC Attendance Portal Logo" class="logo-img">
-
                 <div class="logo-text">
                     <h1>BEC Attendance Portal</h1>
                     <p>Real-time attendance monitoring</p>
                 </div>
             </div>
+            <div class="nav-buttons">
+                <button class="nav-btn active" onclick="showPage('dashboard')">📊 Dashboard</button>
+                <button class="nav-btn" onclick="showPage('registration')">📝 Student Registration</button>
+            </div>
         </div>
     </nav>
 
-
     <div class="container">
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-header">
-                    <div class="stat-icon blue">📊</div>
+        <!-- Dashboard Page -->
+        <div id="dashboardPage" class="page active">
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon blue">📊</div>
+                    </div>
+                    <h3 id="totalRecords">0</h3>
+                    <p>Total Records</p>
                 </div>
-                <h3 id="totalRecords">0</h3>
-                <p>Total Records</p>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon green">✓</div>
+                    </div>
+                    <h3 id="todayRecords">0</h3>
+                    <p>Today's Check-ins</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-header">
+                        <div class="stat-icon purple">👥</div>
+                    </div>
+                    <h3 id="uniqueUsers">0</h3>
+                    <p>Unique Users</p>
+                </div>
             </div>
-            <div class="stat-card">
-                <div class="stat-header">
-                    <div class="stat-icon green">✓</div>
+
+            <div class="main-card">
+                <div class="card-header">
+                    <div class="card-title">Attendance Records</div>
+                    <div class="card-subtitle">View and manage all attendance entries</div>
                 </div>
-                <h3 id="todayRecords">0</h3>
-                <p>Today's Check-ins</p>
-            </div>
-            <div class="stat-card">
-                <div class="stat-header">
-                    <div class="stat-icon purple">👥</div>
+
+                <div class="controls">
+                    <input type="date" id="dateFilter" placeholder="Filter by date">
+                    <select id="userFilter">
+                        <option value="">All Users</option>
+                    </select>
+                    <select id="gradeLevelFilter">
+                        <option value="">All Grade Levels</option>
+                    </select>
+                    <button class="btn-primary" onclick="applyFilters()">Apply Filter</button>
+                    <button class="btn-secondary" onclick="clearFilters()">Clear</button>
+                    <button class="btn-success" onclick="exportData()">Export CSV</button>
                 </div>
-                <h3 id="uniqueUsers">0</h3>
-                <p>Unique Users</p>
+
+                <div class="table-container">
+                    <div id="loading" class="loading">
+                        <div class="loading-spinner"></div>
+                        <div>Loading attendance data...</div>
+                    </div>
+                    <div id="noData" class="no-data" style="display: none;">
+                        <div class="no-data-icon">📋</div>
+                        <div>No attendance records found</div>
+                    </div>
+                    <table id="attendanceTable" style="display: none;">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Grade Level</th>
+                                <th>Section</th>
+                                <th>Card UID</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
-        <div class="main-card">
-            <div class="card-header">
-                <div class="card-title">Attendance Records</div>
-                <div class="card-subtitle">View and manage all attendance entries</div>
-            </div>
+        <!-- Registration Page -->
+        <div id="registrationPage" class="page">
+            <div class="reg-grid">
+                <div class="main-card">
+                    <div class="card-header">
+                        <div class="card-title">📝 Register New Student</div>
+                        <div class="card-subtitle">Add student RFID card to the system</div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <div id="successMessage" class="alert alert-success" style="display: none;">
+                            ✓ Student registered successfully!
+                        </div>
 
-            <div class="controls">
-                <input type="date" id="dateFilter" placeholder="Filter by date">
-                <select id="userFilter">
-                    <option value="">All Users</option>
-                </select>
-                <button class="btn-primary" onclick="applyFilters()">Apply Filter</button>
-                <button class="btn-secondary" onclick="clearFilters()">Clear</button>
-                <button class="btn-success" onclick="exportData()">Export CSV</button>
-            </div>
+                        <form id="registrationForm">
+                            <div class="form-group">
+                                <label>Student ID</label>
+                                <input type="text" id="studentID" placeholder="e.g., 2021-001" required>
+                            </div>
 
-            <div class="table-container">
-                <div id="loading" class="loading">
-                    <div class="loading-spinner"></div>
-                    <div>Loading attendance data...</div>
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" id="studentName" placeholder="e.g., John Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Course</label>
+                                <select id="studentCourse" required>
+                                    <option value="">Select Course</option>
+                                    <option value="BSIT">BSIT - BS Information Technology</option>
+                                    <option value="BSCS">BSCS - BS Computer Science</option>
+                                    <option value="BSIS">BSIS - BS Information Systems</option>
+                                    <option value="ACT">ACT - Associate in Computer Technology</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Grade Level</label>
+                                <select id="gradeLevel" required>
+                                    <option value="">Select Grade Level</option>
+                                    <option value="1st Year">1st Year</option>
+                                    <option value="2nd Year">2nd Year</option>
+                                    <option value="3rd Year">3rd Year</option>
+                                    <option value="4th Year">4th Year</option>
+                                    <option value="Grade 11">Grade 11</option>
+                                    <option value="Grade 12">Grade 12</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Section</label>
+                                <input type="text" id="section" placeholder="e.g., A, B, STEM-1" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>RFID Card UID</label>
+                                <input type="text" id="cardUID" placeholder="Scan card or enter UID manually" required>
+                            </div>
+
+                            <button type="submit" class="btn-primary" style="width: 100%;">
+                                ✓ Register Student
+                            </button>
+                        </form>
+
+                        <div class="alert alert-info" style="margin-top: 20px;">
+                            <strong>💡 How to get Card UID:</strong><br>
+                            1. Upload the UID Reader code to ESP32<br>
+                            2. Open Serial Monitor (115200 baud)<br>
+                            3. Scan the RFID card<br>
+                            4. Copy the UID and paste it above
+                        </div>
+                    </div>
                 </div>
-                <div id="noData" class="no-data" style="display: none;">
-                    <div class="no-data-icon">📋</div>
-                    <div>No attendance records found</div>
+
+                <div class="main-card">
+                    <div class="card-header">
+                        <div class="card-title">👥 Registered Students</div>
+                        <div class="card-subtitle">Total: <span id="studentCount">0</span> students</div>
+                    </div>
+                    <div style="padding: 30px;">
+                        <div id="studentList" class="student-list">
+                            <p style="text-align: center; color: #94a3b8; padding: 40px;">
+                                No students registered yet
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <table id="attendanceTable" style="display: none;">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Card UID</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody">
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
 
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-        import { getDatabase, ref, onValue } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+        import { getDatabase, ref, onValue, set, remove } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
 
-        // Firebase configuration - REPLACE WITH YOUR CONFIG
+        // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyA_TpVRL3kJUrLryXzH_KOPCIy1FVKRkwQ",
             authDomain: "bec-attendance-portal.firebaseapp.com",
@@ -515,6 +754,18 @@
         let allRecords = [];
         let filteredRecords = [];
 
+        // Page Navigation
+        window.showPage = function(pageName) {
+            const pages = document.querySelectorAll('.page');
+            const buttons = document.querySelectorAll('.nav-btn');
+            
+            pages.forEach(page => page.classList.remove('active'));
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(pageName + 'Page').classList.add('active');
+            event.target.classList.add('active');
+        };
+
         // Listen for attendance data
         const attendanceRef = ref(database, 'attendance');
         onValue(attendanceRef, (snapshot) => {
@@ -524,7 +775,6 @@
             const data = snapshot.val();
             
             if (data) {
-                // Parse nested data structure
                 Object.keys(data).forEach(date => {
                     Object.keys(data[date]).forEach(timestamp => {
                         const record = data[date][timestamp];
@@ -533,16 +783,102 @@
                     });
                 });
                 
-                // Sort by timestamp descending (newest first)
                 allRecords.sort((a, b) => b.timestamp - a.timestamp);
-                
                 filteredRecords = [...allRecords];
                 updateDisplay();
-                populateUserFilter();
+                populateFilters();
             } else {
                 document.getElementById('noData').style.display = 'block';
             }
         });
+
+        // Listen for students data
+        const studentsRef = ref(database, 'students');
+        onValue(studentsRef, (snapshot) => {
+            const studentListDiv = document.getElementById('studentList');
+            const data = snapshot.val();
+
+            if (data) {
+                const studentCount = Object.keys(data).length;
+                document.getElementById('studentCount').textContent = studentCount;
+                
+                studentListDiv.innerHTML = '';
+                Object.keys(data).forEach(studentID => {
+                    const student = data[studentID];
+                    studentListDiv.innerHTML += `
+                        <div class="student-item">
+                            <div class="student-info">
+                                <h3>${student.name}</h3>
+                                <p>ID: ${student.studentID} • ${student.course}</p>
+                                <p>${student.gradeLevel} - Section ${student.section}</p>
+                                <span class="uid-code">${student.uid}</span>
+                            </div>
+                            <button class="btn-danger" onclick="deleteStudent('${studentID}')">
+                                Delete
+                            </button>
+                        </div>
+                    `;
+                });
+            } else {
+                document.getElementById('studentCount').textContent = '0';
+                studentListDiv.innerHTML = `
+                    <p style="text-align: center; color: #94a3b8; padding: 40px;">
+                        No students registered yet
+                    </p>
+                `;
+            }
+        });
+
+        // Register student
+        document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const studentID = document.getElementById('studentID').value.trim();
+            const studentName = document.getElementById('studentName').value.trim();
+            const studentCourse = document.getElementById('studentCourse').value;
+            const gradeLevel = document.getElementById('gradeLevel').value;
+            const section = document.getElementById('section').value.trim();
+            const cardUID = document.getElementById('cardUID').value.trim().toUpperCase();
+
+            const studentData = {
+                studentID: studentID,
+                name: studentName,
+                course: studentCourse,
+                gradeLevel: gradeLevel,
+                section: section,
+                uid: cardUID,
+                registeredDate: new Date().toISOString()
+            };
+
+            try {
+                await set(ref(database, 'students/' + studentID), studentData);
+                
+                const successMsg = document.getElementById('successMessage');
+                successMsg.style.display = 'block';
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                }, 3000);
+
+                document.getElementById('registrationForm').reset();
+                console.log('Student registered successfully!');
+            } catch (error) {
+                console.error('Error registering student:', error);
+                alert('Error registering student: ' + error.message);
+            }
+        });
+
+        // Delete student
+        window.deleteStudent = async function(studentID) {
+            if (confirm('Are you sure you want to delete this student?')) {
+                try {
+                    await remove(ref(database, 'students/' + studentID));
+                    console.log('Student deleted successfully!');
+                } catch (error) {
+                    console.error('Error deleting student:', error);
+                    alert('Error deleting student: ' + error.message);
+                }
+            }
+        };
 
         function updateDisplay() {
             const tableBody = document.getElementById('tableBody');
@@ -565,6 +901,8 @@
                 row.innerHTML = `
                     <td>${index + 1}</td>
                     <td><strong>${record.name || 'Unknown'}</strong></td>
+                    <td><span class="grade-info">${record.gradeLevel || 'N/A'}</span></td>
+                    <td><span class="grade-info">${record.section || 'N/A'}</span></td>
                     <td><span class="uid-code">${record.uid}</span></td>
                     <td>${formatDate(record.date)}</td>
                     <td>${record.time || 'N/A'}</td>
@@ -586,19 +924,17 @@
         function updateStats() {
             document.getElementById('totalRecords').textContent = allRecords.length;
             
-            // Count today's records
             const today = new Date().toISOString().slice(0, 10).replace(/-/g, '');
             const todayCount = allRecords.filter(r => r.date === today).length;
             document.getElementById('todayRecords').textContent = todayCount;
             
-            // Count unique users
             const uniqueUIDs = new Set(allRecords.map(r => r.uid));
             document.getElementById('uniqueUsers').textContent = uniqueUIDs.size;
         }
 
-        function populateUserFilter() {
+        function populateFilters() {
             const userFilter = document.getElementById('userFilter');
-            const uniqueUsers = [...new Set(allRecords.map(r => r.name))];
+            const uniqueUsers = [...new Set(allRecords.map(r => r.name))].filter(Boolean);
             
             userFilter.innerHTML = '<option value="">All Users</option>';
             uniqueUsers.forEach(user => {
@@ -607,11 +943,23 @@
                 option.textContent = user;
                 userFilter.appendChild(option);
             });
+
+            const gradeLevelFilter = document.getElementById('gradeLevelFilter');
+            const uniqueGradeLevels = [...new Set(allRecords.map(r => r.gradeLevel))].filter(Boolean);
+            
+            gradeLevelFilter.innerHTML = '<option value="">All Grade Levels</option>';
+            uniqueGradeLevels.forEach(level => {
+                const option = document.createElement('option');
+                option.value = level;
+                option.textContent = level;
+                gradeLevelFilter.appendChild(option);
+            });
         }
 
         window.applyFilters = function() {
             const dateFilter = document.getElementById('dateFilter').value;
             const userFilter = document.getElementById('userFilter').value;
+            const gradeLevelFilter = document.getElementById('gradeLevelFilter').value;
             
             filteredRecords = allRecords.filter(record => {
                 let matches = true;
@@ -624,6 +972,10 @@
                 if (userFilter) {
                     matches = matches && record.name === userFilter;
                 }
+
+                if (gradeLevelFilter) {
+                    matches = matches && record.gradeLevel === gradeLevelFilter;
+                }
                 
                 return matches;
             });
@@ -634,14 +986,15 @@
         window.clearFilters = function() {
             document.getElementById('dateFilter').value = '';
             document.getElementById('userFilter').value = '';
+            document.getElementById('gradeLevelFilter').value = '';
             filteredRecords = [...allRecords];
             updateDisplay();
         };
 
         window.exportData = function() {
-            let csv = 'No,Name,Card UID,Date,Time,Status\n';
+            let csv = 'No,Name,Grade Level,Section,Card UID,Date,Time,Status\n';
             filteredRecords.forEach((record, index) => {
-                csv += `${index + 1},${record.name},${record.uid},${formatDate(record.date)},${record.time},Present\n`;
+                csv += `${index + 1},${record.name || 'Unknown'},${record.gradeLevel || 'N/A'},${record.section || 'N/A'},${record.uid},${formatDate(record.date)},${record.time || 'N/A'},Present\n`;
             });
             
             const blob = new Blob([csv], { type: 'text/csv' });
@@ -653,5 +1006,4 @@
         };
     </script>
 </body>
-
 </html>
